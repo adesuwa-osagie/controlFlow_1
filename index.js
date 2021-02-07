@@ -25,8 +25,9 @@ function findTen(arr) {
       idx = i;
       return i;
     }    
-
   }
+  return idx;
+  
 }
 
 console.log('debug 1:', findTen([1,6,10,3])); // => 2
@@ -44,6 +45,7 @@ console.log('debug 1:', findTen([1,6,5,9])); // => -1
 function tookVacation(arr) {
   for (var i = 0; i < arr.length; i ++) {
     var names = [];
+    console.log(names)
     if (arr[i].vacation !== undefined) {
       names.push(arr[i].name);
     }
