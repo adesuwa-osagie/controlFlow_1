@@ -43,14 +43,16 @@ console.log('debug 1:', findTen([1,6,5,9])); // => -1
 
 
 function tookVacation(arr) {
+  var names = [];
+  
   for (var i = 0; i < arr.length; i ++) {
-    var names = [];
-    console.log(names)
+    // var names = [];
     if (arr[i].vacation !== undefined) {
       names.push(arr[i].name);
     }
-    return names;
+    // return names;
   }
+  return names;
 }
 
 var vacation = [
@@ -74,7 +76,7 @@ var vacation = [
   }
 ]
 
-// console.log(tookVacation(vacation));// => ['James', 'Paul', 'Elise'];
+console.log(tookVacation(vacation));// => ['James', 'Paul', 'Elise'];
 
 
 //-------------------------------
