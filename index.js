@@ -22,16 +22,15 @@ function findTen(arr) {
   var idx = -1;
   for (var i = 0; i < arr.length; i ++) {
     if (arr[i] === 10) {
-      idx = arr[i];
-      break;
-    } else {
-      return idx;
-    }
+      idx = i;
+      return i;
+    }    
+
   }
 }
 
-// console.log('debug 1:', findTen([1,6,10,3])); // => 2
-// console.log('debug 1:', findTen([1,6,5,9])); // => -1
+console.log('debug 1:', findTen([1,6,10,3])); // => 2
+console.log('debug 1:', findTen([1,6,5,9])); // => -1
 
 
 
