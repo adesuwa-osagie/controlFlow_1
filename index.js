@@ -93,10 +93,10 @@ var listOfNums = [
 ];
 
 function greatestNums(arr) {
-    var greatest = 0;
-var currSum = 0;
+  var greatest = 0;
+  // var currSum = 0;
   for (var i = 0; i < arr.length; i ++) {
-   // var currSum = 0;
+   var currSum = 0;
     for (var j = 0; j < arr[i].length; j ++) {
       currSum += arr[i][j];
       console.log('currSum:', currSum);
@@ -135,6 +135,13 @@ function assertWateredDownWines(actual, expected) {
 
   function wateredDownWines(wineVol, minKG, maxKG) {
 
+    let wineKG = wineVol * 0.98;
+    
+    if (wineKG >= minKG && wineKG <= maxKG) {
+      return `${wineKG.toString()} kg`;
+    } else {
+      return 'rejected';
+    }
   }
 
   //A) Given a wine volume in liters, and a min and max in kilograms, return a string of the wine in kg weight if it is within the min kg and max kg, or 'rejected' if it is not.
@@ -149,6 +156,7 @@ function assertWateredDownWines(actual, expected) {
   Because alcohol is less dense than water, wine has a gravity of around .98.
  */
 
+
 var actual1 = wateredDownWines(100, 97, 99); 
 var expected1 = '98 kg';
 
@@ -158,9 +166,9 @@ var expected2 = 'rejected';
 var actual3 = wateredDownWines(120, 116, 118); 
 var expected3 =  '117.6 kg';
 
-// console.log(assertWateredDownWines(actual1, expected1));
-// console.log(assertWateredDownWines(actual2, expected2));
-// console.log(assertWateredDownWines(actual3, expected3));
+console.log(assertWateredDownWines(actual1, expected1));
+console.log(assertWateredDownWines(actual2, expected2));
+console.log(assertWateredDownWines(actual3, expected3));
 
 
 //-----------------------
@@ -183,7 +191,25 @@ var expected3 =  '117.6 kg';
    */
 
   function wateredDownWinesB(wines) {
-    
+    let result = [];
+  
+    //iterate over the wines array
+    for (let i = 0; i < wines.length; i++) {
+      //current wine => wine[i].liters * 0.98
+      let wineKG = wines[i].liters * 0.98
+      let min = wines[i].minKG
+      let max = wines[i].maxKG
+      //if current wine greater/equal minkg AND less/equal maxkg
+      if (wineKG >= min && wineKG <= max) {
+        //push true into result array
+        result.push(true);
+      //else
+      } else {
+        //push false
+        result.push(false);
+      }
+    }
+    return result;
   }
 
 console.log(wateredDownWinesB(cases)) 
